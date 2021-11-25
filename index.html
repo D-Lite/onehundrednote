@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+    </head>
+    <body style="margin: 0px; overflow: hidden;">
+        <div class="arjs-loader">
+            <div>Might take a while, but I will show up!</div>
+        </div>
+
+        <!-- Aframe scene crreeationn -->
+        <a-scene
+            renderer: logarithmicDepthBuffer="true"
+            embedded
+            arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"   
+        >
+
+            <!-- A-NFT starts here -->
+            <a-nft
+                type="nft"
+                url="./onehundred/onehundred"
+                smoothing="true"
+                smoothCount="10"
+                smoothTolerance=".01"
+                smoothThreshold="5"
+            >
+                <!-- /A entit (Entity child  of a-nft) -->
+
+                    <a-entity
+                        gltf-model="./Milling.gltf"
+                        scale="5 5 5"
+                        position="50 150 0"
+                    >
+
+                    </a-entity>
+
+            </a-nft>
+
+            <a-entity camera></a-entity>
+
+        </a-scene>
+    </body>
+
+    <style>
+        .arjs-loader {
+          height: 100%;
+          width: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-color: rgba(0, 0, 0, 0.8);
+          z-index: 9999;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      
+        .arjs-loader div {
+          text-align: center;
+          font-size: 1.25em;
+          color: white;
+        }
+      </style>
+</html>
